@@ -1,18 +1,24 @@
-﻿from random import randint
-from time import sleep
+from random import randint 
+from  time import sleep
 
-print("-=" * 28)
-print("Vou pensar em um numero entre 0 e 5 , tente adivinhar")
-print("-=" * 28)
+print('Sou seu computador...')
 
-num = randint(0, 5)
+num = randint(0, 10)
 
-chute = int(input("Em que numero eu pensei:"))
-
-print("PROCESSANDO...")
+print('Acabei de pensar em um número entre 0 e 10.')
+print('Será que voçê consegue adivinhar qual foi?')
 sleep(2)
 
-if chute == num:
-    print("Parabens! Você conseguiu me vencer!")
-else:
-    print("Ganhei! Eu pensei no numero {} e não no {}".format(num, chute))
+pal = int(input('Qual o seu palpite: '))
+cont = 1
+
+while pal != num:
+    if pal > num:
+        pal = int(input(('Menos... Tente mais uma vez: ')))
+
+    elif pal < num:
+        pal = int(input('Mais... Tente mais uma vez: '))
+
+    cont += 1
+
+print('Acertou com {} tentativas. Parabéns'. format(cont))
